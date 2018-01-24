@@ -17,13 +17,14 @@ class ReadDocx
 
     }
 
-    public function read($documenFiletName)
+    public function read($documenFiletName,$pyExeFile)
     {
 
-        //$url = '/www/Code/python/test/chess.docx';
+        //$documenFiletName = '/Users/songjian/Documents/demo.docx';
 
-        $url = $documenFiletName;
-        $result = shell_exec("python3.6 chess.py $url");
+        //$pyExeFile = "/Users/songjian/Code/xiaoshuo-plus/chess.py";
+
+        $result = shell_exec("python3.6 $pyExeFile $documenFiletName");
         $article = json_decode($result, true);
 
         $arr = [];
